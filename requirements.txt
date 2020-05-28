@@ -1,0 +1,6 @@
+peewee==3.13.3
+flask==1.1.2
+flask_login==0.5.0
+flask_wtf==0.14.3
+wtforms==0.14.3
+awesome-slugify==1.6.5
