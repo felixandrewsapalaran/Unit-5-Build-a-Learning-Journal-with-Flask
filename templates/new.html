@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="new-entry">
+    <h2>New Entry</h2>
+    <form method="post">
+        <label for="title"> Title</label>
+        <input id="title" type="text" name="title"><br>
+        <label for="date">Date</label>
+        <input id="date" type="date" name="date"><br>
+        <label for="time-spent"> Time Spent (hours)</label>
+        <input id="time-spent" type="number" name="time_spent"><br>
+        <label for="what-i-learned">What I Learned</label>
+        <textarea id="what-i-learned" cols="100" rows="5" name="learned"></textarea><br>
+        <label for="resources">Resources to Remember</label>
+        <textarea id="resources" cols="50" rows="5" name="resources"></textarea><br>
+        <label for="tags">Tags (space-separated)</label>
+        <input id="tags" type="text" name="tags" placeholder="E.g. thoughts mondays"><br>
+        <input type="submit" value="Publish Entry" class="button">
+        <a href="{{ url_for('main_app_views.index') }}" class="button button-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="entry-list">
+    {% for entry in entries %}
+    <article>
+        <h2><a href="/entries/{{entry.slug}}">{{entry.title}}</a></h2>
+        <time datetime={{entry.date.strftime("%Y-%m-%d")}}>{{entry.date.strftime("%B %d %Y")}}</time>
+        <div>
+        <br>
+        {% for tag in entry.tags.split() %}
+            <span class="tag"><a href="/?tag={{tag}}">{{tag}}</a></span>
+        {% endfor %}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endblock content %}

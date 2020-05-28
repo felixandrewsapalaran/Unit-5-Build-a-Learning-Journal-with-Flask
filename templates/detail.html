@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<div class="entry-list single">
+    <article>
+        <h1>{{entry.title}}</h1>
+        <time datetime={{entry.date.strftime("%Y-%m-%d")}}>{{entry.date.strftime("%B %d %Y")}}</time>
+        <div class="entry">
+            <h3>Time Spent: </h3>
+            <p>{% if entry.time_spent is not none %}{{entry.time_spent}} hours{% endif %}<p>
+        </div>
+        <div class="entry">
+            <h3>What I Learned:</h3>
+            {% for text in entry.learned.split("\n") %}
+            <p>{{text|safe}}</p>
+            {% endfor %}
+        </div>
+        <div class="entry">
+            <h3>Resources to Remember:</h3>
+            <ul>
+                {% for item in (entry.resources.split("\n") if entry.resources else []) %}
+                <li><a href="">{{item|safe}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="entry">
+            <h3>Tags</h3>
+            <br>
+            <div>
+                {% for tag in entry.tags.split() %}
+                    <span class="tag"><a href="/?tag={{tag}}">{{tag}}</a></span>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+</div>
+<div class="edit">
+    <p><a href="/entries/{{entry.slug}}/edit">Edit Entry</a></p>
+</div>
+<div class="delete">
+    <p><a href="/entries/{{entry.slug}}/delete">Delete Entry</a></p>
+</div>
+{% endblock content %}
