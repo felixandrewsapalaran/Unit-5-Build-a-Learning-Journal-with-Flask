@@ -1,3 +1,11 @@
+"""
+Python Development Techdegree
+Project 5 - Build a Learning Journal with Flask
+
+Author: Felix Andrew Sapalaran (felixandrewsapalaran@gmail.com)
+---------------------------------------------------------------
+"""
+
 from flask import Flask
 import models
 from views import main_app_views
