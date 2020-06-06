@@ -1,3 +1,10 @@
+"""
+Python Development Techdegree
+Project 5 - Build a Learning Journal with Flask
+Author: Felix Andrew Sapalaran (felixandrewsapalaran@gmail.com)
+---------------------------------------------------------------
+"""
+
 import datetime
 from flask import (
     Blueprint,
